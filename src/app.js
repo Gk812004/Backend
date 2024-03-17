@@ -19,4 +19,17 @@ app.use(express.static("public"))// create a Public file where it will store pho
 
 app.use(cookieParser())
 
+
+// routes import 
+
+import userRouter from "./routes/user.routes.js";
+
+// route Declaration
+
+app.use("/api/v1/users", userRouter)
+app.get("/",(req,res)=>{
+    res.send("hello")
+})
+// app.use("/help",userRouter)
+
 export {app}
